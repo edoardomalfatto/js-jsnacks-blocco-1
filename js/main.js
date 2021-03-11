@@ -98,3 +98,21 @@ for (key in arrayZucchineMax15) {
 };
 
 console.log(sommaPesoMax15);
+
+//Scrivi una funzione che accetti una stringa come
+//argomento e la ritorni girata (es. Ciao -> oaiC)
+
+function parolaAlcontrario(parola) {
+    var parolaAlDritto = [];
+    for (var i = 0; i < parola.length; i++) {
+        parolaAlDritto.push(parola[i]);
+    }
+    var parolaContraria = "";
+    for (var i = parola.length - 1; i >= 0; i--) {
+        parolaContraria += parolaAlDritto[i];
+
+    }
+    return parolaContraria
+};
+
+console.log(parolaAlcontrario("supercalifragilistichespiralitoso"));
