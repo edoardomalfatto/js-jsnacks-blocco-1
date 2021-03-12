@@ -211,7 +211,42 @@ function getRndInteger(min, max) {
 Scrivi una funzione che fonda due array (aventi lo stesso
 numero di elementi) prendendo alternativamente gli
 elementi da uno e dall’altro
-es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].*/
+
+var arrayprova1 = ["a", "b", "c", "d"];
+var arrayprova2 = [1, 2, 3, 4, 5, 6];
+var arrayFinale = [];
+
+//se gli array non sono dello stesso numero nel var finale comparirà un "ValArray1Finiti",quando i valori dell'array più corto sono finiti.
+
+function zigZagArrays(array1, array2) {
+    if (array1.length > array2.length) {
+        for (var i = 0; i < array1.length; i++) {
+            arrayFinale.push(array1[i]);
+            arrayFinale.push(array2[i]);
+        };
+    } else if (array1.length < array2.length) {
+        for (var i = 0; i < array2.length; i++) {
+            if (array1[i] == null || array1[i] == "") {
+                arrayFinale.push("ValArray1Finiti")
+            } else {
+                arrayFinale.push(array1[i]);
+            };
+            arrayFinale.push(array2[i]);
+        };
+    } else {
+        for (var i = 0; i < array2.length; i++) {
+            arrayFinale.push(array1[i]);
+            arrayFinale.push(array2[i]);
+        };
+    };
+    return arrayFinale
+};
+
+
+console.log(zigZagArrays(arrayprova1, arrayprova2));
+
+/*
 5)
 Scrivi una funzione che accetti tre argomenti:
 un array e due numeri (“a” più piccolo di “b” e “b” grande al
