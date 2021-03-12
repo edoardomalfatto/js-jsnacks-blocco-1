@@ -215,11 +215,12 @@ es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].*/
 
 var arrayprova1 = ["a", "b", "c", "d"];
 var arrayprova2 = [1, 2, 3, 4, 5, 6];
-var arrayFinale = [];
+
 
 //se gli array non sono dello stesso numero nel var finale comparirà un "ValArray1Finiti",quando i valori dell'array più corto sono finiti.
 
 function zigZagArrays(array1, array2) {
+    var arrayFinale = [];
     if (array1.length > array2.length) {
         for (var i = 0; i < array1.length; i++) {
             arrayFinale.push(array1[i]);
@@ -227,7 +228,7 @@ function zigZagArrays(array1, array2) {
         };
     } else if (array1.length < array2.length) {
         for (var i = 0; i < array2.length; i++) {
-            if (array1[i] == null || array1[i] == "") {
+            if (array1[i] == null) {
                 arrayFinale.push("ValArray1Finiti")
             } else {
                 arrayFinale.push(array1[i]);
@@ -251,5 +252,37 @@ console.log(zigZagArrays(arrayprova1, arrayprova2));
 Scrivi una funzione che accetti tre argomenti:
 un array e due numeri (“a” più piccolo di “b” e “b” grande al
 massimo quanto il numero di elementi dell’array).
+
+un array
+a=3
+b=4 lengh max array
+*/
+
+
+var arrayprova3 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+a = 3;
+b = 5;
+
+function slicedArray(array, num1, num2) {
+    var arrayNuovo = [];
+    if (num1 >= num2 || b > array.length) {
+        return console.log("inserisci due numeri validi per estrarre i valori dell'array");
+    } else {
+        for (var i = 0; i < array.length; i++) {
+            if (i >= num1 && i <= num2) {
+                arrayNuovo.push(array[i]);
+            };
+        };
+    };
+    return arrayNuovo;
+};
+
+console.log(slicedArray(arrayprova3, a, b));
+
+
+
+
+/*
 La funzione ritornerà un nuovo array con i valori che
 hanno la posizione compresa tra “a” e “b” */
